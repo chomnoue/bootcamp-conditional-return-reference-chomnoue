@@ -5,6 +5,7 @@ import com.aurea.testgenerator.conditionalreturn.reference.AnyType;
 public class SingleCondition {
 
     public static final String CONST_STRING = "Const string";
+    public static final int CONST_INT = 375;
 
     private int integerField;
     private boolean booleanField;
@@ -29,8 +30,9 @@ public class SingleCondition {
         return null;
     }
 
-    public String testAndReturnComplex(String stringParam, int intParam, long longParam) {
-        if ((!stringParam.equals(CONST_STRING) || intParam > 30) && (45 < this.integerField ^ longParam < longField)) {
+    public String testAndReturnComplex(String stringParam, int intParam, long longParam, int secondIntParam) {
+        if ((!stringParam.equals(CONST_STRING) || intParam > 30) && (45 < this.integerField
+                ^ longParam < this.longField) && secondIntParam!=CONST_INT) {
             return CONST_STRING;
         } else {
             return "literal string";
@@ -39,11 +41,11 @@ public class SingleCondition {
 
 
 
-    public String testAndReturnFieldOrParam(String stringParam, boolean booleanParam) {
-        if (booleanParam) {
+    public String testAndReturnFieldOrParam(String stringParam, boolean booleanParam, String secondStringParam) {
+        if (secondStringParam == null || booleanParam ) {
             return stringParam;
         } else {
-            return stringField;
+            return this.stringField;
         }
     }
 
@@ -85,5 +87,13 @@ public class SingleCondition {
 
     public void setStringField(String stringField) {
         this.stringField = stringField;
+    }
+
+    public long getLongField() {
+        return longField;
+    }
+
+    public void setLongField(long longField) {
+        this.longField = longField;
     }
 }
