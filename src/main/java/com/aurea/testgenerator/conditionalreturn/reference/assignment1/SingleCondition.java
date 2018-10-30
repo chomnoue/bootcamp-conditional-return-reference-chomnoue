@@ -1,22 +1,25 @@
-package com.aurea.testgenerator.conditionalreturn.reference;
+package com.aurea.testgenerator.conditionalreturn.reference.assignment1;
+
+import com.aurea.testgenerator.conditionalreturn.reference.AnyType;
 
 public class SingleCondition {
+
     public static final String CONST_STRING = "Const string";
 
     private int integerField;
     private boolean booleanField;
 
-    public AnyType testAndReturn(String stringParam, int intParam){
-        if(CONST_STRING.equals(stringParam) && intParam >30){
+    public AnyType testAndReturn(String stringParam, int intParam) {
+        if (CONST_STRING.equals(stringParam) && intParam > 30) {
             System.out.println("Returning default");
             return AnyType.DEFAULT;
-        }else {
+        } else {
             return null;
         }
     }
 
-    public AnyType testAndReturnNoElse(int intParam){
-        if(this.booleanField && intParam == this.integerField){
+    public AnyType testAndReturnNoElse(int intParam) {
+        if (this.booleanField && intParam == this.integerField) {
             int intVar = intParam + integerField;
             return new AnyType(intVar);
         }
@@ -24,11 +27,11 @@ public class SingleCondition {
         return null;
     }
 
-    public void nonSupportedVoid(){
+    public void nonSupportedVoid() {
 
     }
 
-    public AnyType nonSupportedNoIf(String stringParam){
+    public AnyType nonSupportedNoIf(String stringParam) {
         System.out.println(stringParam);
         return AnyType.DEFAULT;
     }

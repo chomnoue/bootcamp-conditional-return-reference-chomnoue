@@ -1,6 +1,8 @@
 .gradle
 /build/
 **/build/
+/target/
+**/target/
 
 #eclipse files
 .classpath

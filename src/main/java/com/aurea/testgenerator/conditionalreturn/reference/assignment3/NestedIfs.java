@@ -1,17 +1,20 @@
-package com.aurea.testgenerator.conditionalreturn.reference;
+package com.aurea.testgenerator.conditionalreturn.reference.assignment3;
+
+import com.aurea.testgenerator.conditionalreturn.reference.AnyType;
 
 public class NestedIfs {
+
     private int integerField;
     private boolean booleanField;
 
-    public AnyType testMultiple(String stringParam, int intParam){
-        if(this.booleanField && intParam==this.integerField){
+    public AnyType testMultiple(String stringParam, int intParam) {
+        if (this.booleanField && intParam == this.integerField) {
             int intVar = intParam + integerField;
             return new AnyType(intVar);
-        }else if(intParam!=this.integerField && stringParam !=null){
+        } else if (intParam != this.integerField && stringParam != null) {
             System.out.println("Returning default");
             return AnyType.DEFAULT;
-        }else {
+        } else {
             System.out.println("returning null");
             return null;
         }
