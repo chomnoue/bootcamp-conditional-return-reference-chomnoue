@@ -11,7 +11,7 @@ public class NestedIfs {
         if (this.booleanField && intParam == this.integerField) {
             int intVar = intParam + integerField;
             return new AnyType(intVar);
-        } else if (intParam != this.integerField && stringParam != null) {
+        } else if (intParam != this.integerField && stringParam != null) { //TODO: change the second condition to `stringParam == "Hello"
             System.out.println("Returning default");
             return AnyType.DEFAULT;
         } else {
