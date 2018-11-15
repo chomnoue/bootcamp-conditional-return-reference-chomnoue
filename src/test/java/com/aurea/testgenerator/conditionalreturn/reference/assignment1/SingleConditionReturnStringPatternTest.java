@@ -22,7 +22,7 @@ public class SingleConditionReturnStringPatternTest {
     public void testAndReturnConditionalElse() throws Exception {
         SingleConditionReturnString object = new SingleConditionReturnString();
         String stringParam = CONST_STRING + 1;
-        int intParam = 878;
+        int intParam = 4046;
         String actualResult = object.testAndReturn(stringParam, intParam);
         assertThat(actualResult).isEqualTo("any string");
     }
@@ -31,8 +31,8 @@ public class SingleConditionReturnStringPatternTest {
     public void testAndReturnNoElseConditionalTrue() throws Exception {
         SingleConditionReturnString object = new SingleConditionReturnString();
         object.setBooleanField(true);
-        object.setIntegerField(5547);
-        int intParam = 5547;
+        object.setIntegerField(4040);
+        int intParam = 4040;
         AnyType actualResult = object.testAndReturnNoElse(intParam);
         assertThat(actualResult).isNotNull();
     }
@@ -41,7 +41,7 @@ public class SingleConditionReturnStringPatternTest {
     public void testAndReturnNoElseConditionalElse() throws Exception {
         SingleConditionReturnString object = new SingleConditionReturnString();
         object.setBooleanField(false);
-        int intParam = 5144;
+        int intParam = 9914;
         AnyType actualResult = object.testAndReturnNoElse(intParam);
         assertThat(actualResult).isNull();
     }

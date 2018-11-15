@@ -2,10 +2,9 @@ package com.aurea.testgenerator.conditionalreturn.reference.assignment3;
 
 public class NestedLongMethod {
 
-    private int integerField;
     private boolean booleanField;
 
-    public static String deeplyNestedLongMethod(boolean cond1, boolean cond2, boolean cond3, boolean cond4,
+    public String deeplyNestedLongMethod(boolean cond1, boolean cond2, boolean cond3, boolean cond4,
             boolean cond5, boolean cond6, boolean cond7) {
         if (cond1) {
             if (cond2) {
@@ -73,23 +72,24 @@ public class NestedLongMethod {
                 }
             }
         }
+
+        if (this.booleanField) {
+            System.out.printf("boolean field: %b\n", booleanField);
+            System.out.println("boolean field met");
+            System.out.println("boolean field met 1");
+            System.out.println("boolean field met 2");
+            System.out.println("boolean field met 3");
+            System.out.println("boolean field met 4");
+            System.out.println("boolean field met 5");
+            System.out.println("boolean field met 6");
+            return "boolean field met";
+        }
+
         System.out.println("Reached the end");
         System.out.println("Reached the end 1");
         System.out.println("Reached the end 2");
         System.out.println("Reached the end 3");
         return "Reached the end";
-    }
-
-    public int getIntegerField() {
-        return integerField;
-    }
-
-    public void setIntegerField(int integerField) {
-        this.integerField = integerField;
-    }
-
-    public boolean isBooleanField() {
-        return booleanField;
     }
 
     public void setBooleanField(boolean booleanField) {

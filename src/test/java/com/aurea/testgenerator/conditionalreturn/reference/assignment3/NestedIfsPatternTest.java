@@ -11,10 +11,10 @@ public class NestedIfsPatternTest {
     @Test
     public void testNestedConditionalTrue() throws Exception {
         NestedIfs object = new NestedIfs();
-        String stringParam = "Ariel";
+        String stringParam = "Messier 83";
         object.setBooleanField(true);
-        object.setIntegerField(8184);
-        int intParam = 8184;
+        object.setIntegerField(7654);
+        int intParam = 7654;
         AnyType actualResult = object.testNested(stringParam, intParam);
         assertThat(actualResult).isNotNull();
     }
@@ -24,8 +24,8 @@ public class NestedIfsPatternTest {
         NestedIfs object = new NestedIfs();
         String stringParam = "Hello";
         object.setBooleanField(false);
-        object.setIntegerField(2407 + 1);
-        int intParam = 2407;
+        object.setIntegerField(6463 + 1);
+        int intParam = 6463;
         AnyType actualResult = object.testNested(stringParam, intParam);
         assertThat(actualResult).isEqualTo(AnyType.DEFAULT);
     }
@@ -33,21 +33,21 @@ public class NestedIfsPatternTest {
     @Test
     public void testNestedConditionalElseElse() throws Exception {
         NestedIfs object = new NestedIfs();
-        String stringParam = "Pearl Cluster";
+        String stringParam = "Mahasim";
         object.setBooleanField(false);
-        object.setIntegerField(5253);
-        int intParam = 5253;
+        object.setIntegerField(6005);
+        int intParam = 6005;
         AnyType actualResult = object.testNested(stringParam, intParam);
         assertThat(actualResult).isNull();
     }
 
     @Test
     public void deeplyNestedStaticConditionalTrueTrue() throws Exception {
-        boolean cond7 = false;
+        boolean cond7 = true;
         boolean cond6 = true;
-        boolean cond5 = false;
-        boolean cond4 = true;
-        boolean cond3 = true;
+        boolean cond5 = true;
+        boolean cond4 = false;
+        boolean cond3 = false;
         boolean cond2 = true;
         boolean cond1 = true;
         String actualResult = NestedIfs.deeplyNestedStatic(cond1, cond2, cond3, cond4, cond5, cond6, cond7);
@@ -56,10 +56,10 @@ public class NestedIfsPatternTest {
 
     @Test
     public void deeplyNestedStaticConditionalTrueElse() throws Exception {
-        boolean cond7 = false;
-        boolean cond6 = false;
-        boolean cond5 = true;
-        boolean cond4 = true;
+        boolean cond7 = true;
+        boolean cond6 = true;
+        boolean cond5 = false;
+        boolean cond4 = false;
         boolean cond3 = true;
         boolean cond2 = false;
         boolean cond1 = true;
@@ -113,7 +113,7 @@ public class NestedIfsPatternTest {
         boolean cond5 = false;
         boolean cond4 = true;
         boolean cond3 = true;
-        boolean cond2 = true;
+        boolean cond2 = false;
         boolean cond1 = false;
         String actualResult = NestedIfs.deeplyNestedStatic(cond1, cond2, cond3, cond4, cond5, cond6, cond7);
         assertThat(actualResult).isEqualTo("Cond 7 not met");
@@ -123,10 +123,10 @@ public class NestedIfsPatternTest {
     public void deeplyNestedStaticConditionalElseTrueElseTrue() throws Exception {
         boolean cond7 = false;
         boolean cond6 = true;
-        boolean cond5 = true;
+        boolean cond5 = false;
         boolean cond4 = false;
         boolean cond3 = true;
-        boolean cond2 = false;
+        boolean cond2 = true;
         boolean cond1 = false;
         String actualResult = NestedIfs.deeplyNestedStatic(cond1, cond2, cond3, cond4, cond5, cond6, cond7);
         assertThat(actualResult).isEqualTo("cond 6 met");
@@ -136,10 +136,10 @@ public class NestedIfsPatternTest {
     public void deeplyNestedStaticConditionalElseTrueElseElseTrue() throws Exception {
         boolean cond7 = true;
         boolean cond6 = false;
-        boolean cond5 = false;
+        boolean cond5 = true;
         boolean cond4 = false;
         boolean cond3 = true;
-        boolean cond2 = true;
+        boolean cond2 = false;
         boolean cond1 = false;
         String actualResult = NestedIfs.deeplyNestedStatic(cond1, cond2, cond3, cond4, cond5, cond6, cond7);
         assertThat(actualResult).isEqualTo("Reached the end");
@@ -160,12 +160,12 @@ public class NestedIfsPatternTest {
 
     @Test
     public void deeplyNestedStaticConditionalElseElse() throws Exception {
-        boolean cond7 = true;
-        boolean cond6 = true;
-        boolean cond5 = false;
+        boolean cond7 = false;
+        boolean cond6 = false;
+        boolean cond5 = true;
         boolean cond4 = false;
         boolean cond3 = false;
-        boolean cond2 = true;
+        boolean cond2 = false;
         boolean cond1 = false;
         String actualResult = NestedIfs.deeplyNestedStatic(cond1, cond2, cond3, cond4, cond5, cond6, cond7);
         assertThat(actualResult).isEqualTo("Reached the end");

@@ -13,7 +13,7 @@ public class SingleConditionIngnoredParamsPatternTest {
     public void testAndReturnConditionalTrue() throws Exception {
         SingleConditionIngnoredParams object = new SingleConditionIngnoredParams();
         String stringParam = CONST_STRING;
-        String ignoredSting = "Uranus";
+        String ignoredSting = "111kiloparsecs";
         boolean ignoredBoolean = true;
         int intParam = 30 + 1;
         AnyType actualResult = object.testAndReturn(ignoredSting, stringParam, ignoredBoolean, intParam);
@@ -24,9 +24,9 @@ public class SingleConditionIngnoredParamsPatternTest {
     public void testAndReturnConditionalElse() throws Exception {
         SingleConditionIngnoredParams object = new SingleConditionIngnoredParams();
         String stringParam = CONST_STRING + 1;
-        String ignoredSting = "ROSCOSMOS";
+        String ignoredSting = "Columbia";
         boolean ignoredBoolean = true;
-        int intParam = 6078;
+        int intParam = 2100;
         AnyType actualResult = object.testAndReturn(ignoredSting, stringParam, ignoredBoolean, intParam);
         assertThat(actualResult).isNull();
     }
@@ -35,8 +35,8 @@ public class SingleConditionIngnoredParamsPatternTest {
     public void testAndReturnNoElseConditionalTrue() throws Exception {
         SingleConditionIngnoredParams object = new SingleConditionIngnoredParams();
         object.setBooleanField(true);
-        object.setIntegerField(2409);
-        int intParam = 2409;
+        object.setIntegerField(9966);
+        int intParam = 9966;
         AnyType actualResult = object.testAndReturnNoElse(intParam);
         assertThat(actualResult).isNotNull();
     }
@@ -45,7 +45,7 @@ public class SingleConditionIngnoredParamsPatternTest {
     public void testAndReturnNoElseConditionalElse() throws Exception {
         SingleConditionIngnoredParams object = new SingleConditionIngnoredParams();
         object.setBooleanField(false);
-        int intParam = 9133;
+        int intParam = 2063;
         AnyType actualResult = object.testAndReturnNoElse(intParam);
         assertThat(actualResult).isNull();
     }

@@ -23,7 +23,7 @@ public class SingleConditionPatternTest {
     public void testAndReturnConditionalElse() throws Exception {
         SingleCondition object = new SingleCondition();
         String stringParam = CONST_STRING + 1;
-        int intParam = 2549;
+        int intParam = 1254;
         AnyType actualResult = object.testAndReturn(stringParam, intParam);
         assertThat(actualResult).isNull();
     }
@@ -32,8 +32,8 @@ public class SingleConditionPatternTest {
     public void testAndReturnNoElseConditionalTrue() throws Exception {
         SingleCondition object = new SingleCondition();
         object.setBooleanField(true);
-        object.setIntegerField(7835);
-        int intParam = 7835;
+        object.setIntegerField(3130);
+        int intParam = 3130;
         AnyType actualResult = object.testAndReturnNoElse(intParam);
         assertThat(actualResult).isNotNull();
     }
@@ -42,7 +42,7 @@ public class SingleConditionPatternTest {
     public void testAndReturnNoElseConditionalElse() throws Exception {
         SingleCondition object = new SingleCondition();
         object.setBooleanField(false);
-        int intParam = 8485;
+        int intParam = 4491;
         AnyType actualResult = object.testAndReturnNoElse(intParam);
         assertThat(actualResult).isNull();
     }
@@ -52,10 +52,10 @@ public class SingleConditionPatternTest {
         SingleCondition object = new SingleCondition();
         String stringParam = CONST_STRING + 1;
         int secondIntParam = CONST_INT + 1;
-        long longParam = 8051101182465628160L;
+        long longParam = 2465670682373761024L;
         object.setIntegerField(45 - 1);
-        int intParam = 3094;
-        object.setLongField(8051101182465628160L + 1);
+        int intParam = 5170;
+        object.setLongField(2465670682373761024L + 1);
         String actualResult = object.testAndReturnComplex(stringParam, intParam, longParam, secondIntParam);
         assertThat(actualResult).isEqualTo(CONST_STRING);
     }
@@ -64,8 +64,8 @@ public class SingleConditionPatternTest {
     public void testAndReturnComplexConditionalElse() throws Exception {
         SingleCondition object = new SingleCondition();
         String stringParam = CONST_STRING;
-        int secondIntParam = 3809;
-        long longParam = 6700229239917487104L;
+        int secondIntParam = 4173;
+        long longParam = 3972133155145978880L;
         int intParam = 30 - 1;
         String actualResult = object.testAndReturnComplex(stringParam, intParam, longParam, secondIntParam);
         assertThat(actualResult).isEqualTo("literal string");
@@ -75,8 +75,8 @@ public class SingleConditionPatternTest {
     public void testAndReturnFieldOrParamConditionalTrue() throws Exception {
         SingleCondition object = new SingleCondition();
         String secondStringParam = null;
-        String stringParam = "Jupiter";
-        boolean booleanParam = true;
+        String stringParam = "Enterprise";
+        boolean booleanParam = false;
         String actualResult = object.testAndReturnFieldOrParam(stringParam, booleanParam, secondStringParam);
         assertThat(actualResult).isEqualTo(stringParam);
     }
@@ -84,11 +84,11 @@ public class SingleConditionPatternTest {
     @Test
     public void testAndReturnFieldOrParamConditionalElse() throws Exception {
         SingleCondition object = new SingleCondition();
-        String secondStringParam = "Eagle Nebula";
-        String stringParam = "Canis Major";
-        object.setStringField("Wolf 359");
+        String secondStringParam = "Beehive Cluster";
+        String stringParam = "Luyten 726-8A";
+        object.setStringField("Bodes Nebula");
         boolean booleanParam = false;
         String actualResult = object.testAndReturnFieldOrParam(stringParam, booleanParam, secondStringParam);
-        assertThat(actualResult).isEqualTo("Wolf 359");
+        assertThat(actualResult).isEqualTo("Bodes Nebula");
     }
 }

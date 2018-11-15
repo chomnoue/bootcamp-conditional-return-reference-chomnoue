@@ -11,11 +11,11 @@ public class MultipleConditionsPatternTest {
     @Test
     public void testMultipleConditionalTrue() throws Exception {
         MultipleConditions object = new MultipleConditions();
-        String stringParam = "Venus";
+        String stringParam = "Leo Minor";
         object.setBooleanField(true);
-        boolean booleanParam = true;
-        object.setIntegerField(7183);
-        int intParam = 7183;
+        boolean booleanParam = false;
+        object.setIntegerField(7234);
+        int intParam = 7234;
         AnyType actualResult = object.testMultiple(stringParam, intParam, booleanParam);
         assertThat(actualResult).isNotNull();
     }
@@ -26,8 +26,8 @@ public class MultipleConditionsPatternTest {
         String stringParam = "hello";
         object.setBooleanField(false);
         boolean booleanParam = true;
-        object.setIntegerField(3152 + 1);
-        int intParam = 3152;
+        object.setIntegerField(8615 + 1);
+        int intParam = 8615;
         AnyType actualResult = object.testMultiple(stringParam, intParam, booleanParam);
         assertThat(actualResult).isEqualTo(AnyType.DEFAULT);
     }
@@ -35,11 +35,11 @@ public class MultipleConditionsPatternTest {
     @Test
     public void testMultipleConditionalElseElseTrue() throws Exception {
         MultipleConditions object = new MultipleConditions();
-        String stringParam = "Polaris";
+        String stringParam = "Hyperion";
         object.setBooleanField(false);
         boolean booleanParam = true;
-        object.setIntegerField(9976);
-        int intParam = 9976;
+        object.setIntegerField(858);
+        int intParam = 858;
         AnyType actualResult = object.testMultiple(stringParam, intParam, booleanParam);
         assertThat(actualResult).isEqualTo(AnyType.DEFAULT_SIX);
     }
@@ -47,11 +47,11 @@ public class MultipleConditionsPatternTest {
     @Test
     public void testMultipleConditionalElseElseElse() throws Exception {
         MultipleConditions object = new MultipleConditions();
-        String stringParam = "44AU";
+        String stringParam = "Orion";
         object.setBooleanField(false);
         boolean booleanParam = false;
-        object.setIntegerField(9976);
-        int intParam = 9976;
+        object.setIntegerField(858);
+        int intParam = 858;
         AnyType actualResult = object.testMultiple(stringParam, intParam, booleanParam);
         assertThat(actualResult).isNull();
     }
